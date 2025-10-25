@@ -46,3 +46,7 @@ update
 delete
 >>> x.delete()
 
+python manage.py createsuperuser
+admin register the models
+Change the string representation function, __str__() of the Member Model
+Set the list_display property of the MemberAdmin class
