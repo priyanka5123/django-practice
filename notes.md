@@ -8,3 +8,8 @@ Run the server
 python manage.py runserver
 create the app
 python manage.py startapp members
+After creating view, urls.py , modify urls.py again run server. Then output is Helloworld at http://127.0.0.1:8000/members/
+Create a templates folder inside the members folder, and create a HTML file named myfirst.html.
+python manage.py migrate
+python manage.py runserver
+check at http://127.0.0.1:8000/members/
