@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page with Admin Styles</title>
+
+    <!-- ✅ Load Django admin’s default CSS -->
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/dashboard.css' %}">
+</head>
+<body class="dashboard">
+    <div id="container">
+        <div id="header">
+            <h1>Django Admin Default Styles on My Page</h1>
+        </div>
+
+        <div id="content">
+            <p>This page now uses the same base styling as Django Admin.</p>
+        </div>
+    </div>
+</body>
+</html>

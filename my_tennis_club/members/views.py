@@ -30,3 +30,6 @@ def testing(request):
         'fruits': ['Apple', 'Banana', 'Cherry']
     }
     return HttpResponse(template.render(context,request))
+def default_django_styles(request):
+    template = loader.get_template('default_django_styles.html')
+    return HttpResponse(template.render())
