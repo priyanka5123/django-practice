@@ -50,3 +50,48 @@ python manage.py createsuperuser
 admin register the models
 Change the string representation function, __str__() of the Member Model
 Set the list_display property of the MemberAdmin class
+
+Django’s admin styles live under
+django/contrib/admin/static/admin/css/
+<link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+<link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'admin/css/dashboard.css' %}">
+If you want to apply Django’s default admin CSS to your entire app (all pages) — not just one template — you should do it in your project’s base template, which all other templates extend.
+If React runs separately (like on localhost:5173 and Django runs on 127.0.0.1:8000):
+
+Django’s admin CSS files are still available at /static/admin/css/...
+
+You can reference them via CDN-like links to Django’s server.
+
+In React’s public/index.html (the root HTML template):
+<link rel="stylesheet" href="http://127.0.0.1:8000/static/admin/css/base.css">
+<link rel="stylesheet" href="http://127.0.0.1:8000/static/admin/css/responsive.css">
+<link rel="stylesheet" href="http://127.0.0.1:8000/static/admin/css/dashboard.css">
+You can also import them in your root React file if you prefer code imports:
+
+src/App.jsx:
+import './App.css';
+
+// ✅ Import Django admin CSS from your Django static server
+import 'http://127.0.0.1:8000/static/admin/css/base.css';
+import 'http://127.0.0.1:8000/static/admin/css/responsive.css';
+import 'http://127.0.0.1:8000/static/admin/css/dashboard.css';
+You can also download Django’s admin CSS once and put them inside your React src/assets/css/ folder, then import locally:
+
+import './assets/css/base.css';
+Parentheses are not allowed in if statements in Django, so when you combine and and or operators, it is important to know that parentheses are added for and but not for or.
+The empty keyword can also be used if the object does not exist.
+The include tag allows you to include a template inside the current template.
+To add custom styles
+1. STATIC_ROOT = BASE_DIR / 'productionfiles'
+
+STATIC_URL = 'static/'
+
+#Add this in your settings.py file:
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]
+Add this to settings.py
+2.python manage.py collectstatic
+3.Add mystaticfiles to your django project.
+
