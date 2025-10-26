@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        {% extends "master.html" %}
+{% extends "master.html" %}
 
-        {% block title %}
-        My Tennis Club
-        {% endblock %}
+{% block title %}
+  My Tennis Club
+{% endblock %}
 
+{% block content %}
+  <div class="main">
+    <h1>My Tennis Club</h1>
 
-        {% block content %}
-        <h1>My Tennis Club</h1>
-
-        <h3>Members</h3>
-        
-        <p>Check out all our <a href="members/">members</a></p>
-        
-        {% endblock %}
-    </body>
-
-</html>
+    <h3>Members</h3>
+  
+    <p>Check out all our <a href="members/">members</a></p>
+  </div>
+{% endblock %}
