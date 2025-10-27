@@ -95,3 +95,9 @@ Add this to settings.py
 2.python manage.py collectstatic
 3.Add mystaticfiles to your django project.
 
+To install postgres
+pip install psycopg2-binary
+To serve static files
+pip install whitenoise
+
+
